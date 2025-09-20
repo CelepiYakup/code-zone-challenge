@@ -1,0 +1,261 @@
+.heroSection {
+  position: relative;
+  height: 80vh;
+  min-height: 560px;
+  background: var(--bg-primary);
+  overflow: hidden;
+}
+
+.bgLayer {
+  position: absolute;
+  inset: 0;
+  background-position: center bottom 80px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0.25;
+  z-index: 0;
+}
+
+.gradientOverlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+      1200px 500px at 50% 20%,
+      rgba(255, 255, 255, 0.04),
+      transparent 60%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.65) 65%,
+      rgba(0, 0, 0, 0.85) 100%
+    );
+  z-index: 1;
+}
+
+.sideArtist {
+  position: absolute;
+  bottom: 110px;
+  max-height: 70%;
+  object-fit: contain;
+  z-index: 2;
+  filter: drop-shadow(0 16px 32px rgba(0, 0, 0, 0.6));
+  pointer-events: none;
+}
+.leftArtist {
+  left: 0;
+  transform: translateX(100px) rotate(-1deg);
+}
+.rightArtist {
+  right: 0;
+  transform: translateX(-100px) rotate(1deg);
+}
+
+.container {
+  height: 100%;
+  position: relative;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-lg);
+}
+
+.centerCard {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-sm);
+  text-align: center;
+}
+
+.titleRow {
+  display: flex;
+  align-items: flex-end;
+  gap: 16px;
+  transform: rotate(-3.7deg);
+}
+
+.twitchLogo {
+  width: 168px;
+  height: auto;
+}
+
+.titleDivider {
+  width: 1px;
+  height: 124px;
+  background: #3b3b3b;
+  border-radius: 3px;
+  transform: skew(-6deg);
+}
+
+.heroTitle {
+  margin: 0;
+  line-height: var(--line-height-tight);
+  font-family: var(--font-family-heading);
+  font-weight: var(--font-weight-extrabold);
+  font-size: clamp(2rem, 5vw, 3rem);
+  letter-spacing: 0.5px;
+  color: var(--text-primary);
+  text-align: left;
+}
+.titleTop {
+  display: block;
+  opacity: 0.95;
+}
+.titleHighlight {
+  display: inline-block;
+  background: linear-gradient(135deg, #fff200 0%, #ffd700 45%, #ffb100 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0 0.35rem;
+}
+.titleBottom {
+  display: inline-block;
+}
+
+.kicker {
+  transform: rotate(-3.7deg);
+  color: var(--text-primary);
+}
+
+.actions {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12.89px;
+  padding: 14.06px;
+  border-radius: 18.75px;
+  border: 1.17px solid rgba(255, 255, 255, 0.08);
+  background: rgba(19, 19, 19, 0.9);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35),
+    inset 0 0 0 1px rgba(0, 0, 0, 0.35);
+  transform: rotate(-4deg);
+  margin-top: var(--spacing-md);
+}
+
+.btnWrap {
+  display: inline-flex;
+  border-radius: 12px;
+  overflow: hidden;
+  line-height: 0;
+}
+.btnImage {
+  display: block;
+  height: auto;
+}
+
+.split {
+  width: 10px;
+  height: 2px;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.25);
+  margin-inline: 0.25rem;
+}
+
+.bottomVector {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: auto;
+  z-index: 4;
+  pointer-events: none;
+  display: block;
+  filter: drop-shadow(0 -2px 8px rgba(0, 0, 0, 0.35));
+}
+
+@media (max-width: 1024px) {
+  .sideArtist {
+    max-height: 55%;
+    bottom: 120px;
+  }
+  .leftArtist {
+    transform: translateX(60px) rotate(-1deg);
+  }
+  .rightArtist {
+    transform: translateX(-60px) rotate(1deg);
+  }
+  .titleDivider {
+    height: 72px;
+  }
+}
+@media (max-width: 768px) {
+  .heroSection {
+    height: 100vh;
+    min-height: 600px;
+  }
+
+  .container {
+    justify-content: flex-start;
+    padding-top: 125px;
+  }
+
+  .sideArtist {
+    display: block; 
+    max-height: 45%;
+    bottom: 80px;
+  }
+
+  .leftArtist {
+    left: -20px;
+    transform: translateX(0) rotate(-2deg);
+    width: 260px;
+  }
+
+  .rightArtist {
+    right: -5px;
+    transform: translateX(0) rotate(2deg);
+    width: 170px;
+  }
+
+  .centerCard {
+    margin-top: 20px;
+    z-index: 6;
+    position: relative;
+  }
+
+  .titleRow {
+    justify-content: center;
+    transform: rotate(-2deg);
+    gap: 12px;
+  }
+
+  .twitchLogo {
+    width: 120px;
+    height: auto;
+  }
+
+  .titleDivider {
+    height: 60px;
+  }
+
+  .heroTitle {
+    font-size: clamp(1.5rem, 4vw, 2rem);
+  }
+
+  .kicker {
+    transform: rotate(-2deg);
+    font-size: 14px;
+    margin-top: 8px;
+  }
+
+  .actions {
+    transform: rotate(-2deg);
+    margin-top: 16px;
+    padding: 10px;
+    gap: 8px;
+  }
+
+  .btnImage {
+    width: auto;
+    height: 28px;
+  }
+
+  .bottomVector {
+    bottom: -2px;
+  }
+}

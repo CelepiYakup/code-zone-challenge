@@ -1,0 +1,158 @@
+.relatedContent {
+  margin: 48px 0;
+  padding: 24px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 739px;
+}
+
+.title {
+  font-size: 60px;
+  line-height: 1.05;
+  font-weight: 900;
+  margin-bottom: 24px;
+  color: var(--text-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  text-align: start;
+}
+
+.postsList {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.postItem {
+  display: flex;
+  gap: 16px;
+  padding: 16px;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s ease;
+  border-bottom: 1px solid #3b3b3b;
+  min-height: 78px;
+  align-items: center;
+}
+
+.postItem:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--border-accent);
+  transform: translateY(-2px);
+}
+
+.postImage {
+  flex-shrink: 0;
+  width: 78px;
+  height: 78px;
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--bg-secondary);
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border: none;
+  outline: none;
+}
+
+.postItem:hover .image {
+  transform: scale(1.05);
+  transition: transform 0.2s ease;
+}
+
+.postContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+  justify-content: center;
+}
+
+
+.postItem:hover .postTitle {
+  color: var(--primary-yellow);
+}
+
+.postDesc {
+  font-size: 25px;
+  line-height: 1.4; 
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  font-weight: bold;
+  margin: 0;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .relatedContent {
+    margin: 32px 0;
+    padding: 16px;
+    max-width: 100%;
+  }
+
+  .title {
+    font-size: 18px;
+    margin-bottom: 16px;
+  }
+
+  .postsList {
+    gap: 12px;
+  }
+
+  .postItem {
+    padding: 12px;
+    gap: 12px;
+    min-height: 60px;
+  }
+
+  .postImage {
+    width: 60px;
+    height: 60px;
+  }
+
+  .postTitle {
+    font-size: 14px;
+  }
+
+  .postDesc {
+    font-size: 12px;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+  }
+}
+
+@media (max-width: 1024px) and (min-width: 769px) {
+  .relatedContent {
+    margin: 40px 0;
+    padding: 20px;
+  }
+
+  .postItem {
+    padding: 14px;
+    min-height: 70px;
+  }
+
+  .postImage {
+    width: 70px;
+    height: 70px;
+  }
+
+  .postTitle {
+    font-size: 15px;
+  }
+
+  .postDesc {
+    font-size: 13px;
+  }
+}
