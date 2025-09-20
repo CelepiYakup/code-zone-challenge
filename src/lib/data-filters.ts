@@ -1,4 +1,17 @@
-import { Article } from '@/types'; // ✅ Merkezi types'tan import
+interface Article {
+  _id: string;
+  attributes: {
+    title: string;
+    desc: string;
+    img: string;
+    authors: string[];
+    category: string[];
+    tags: string[];
+    trends: boolean;
+    slug: string;
+  };
+  createdAt: string;
+}
 
 export const filterArticlesByTag = (
   articles: Article[],

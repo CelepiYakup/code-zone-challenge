@@ -1,0 +1,3 @@
+@"
+regex://[ \t]*//\s*✅\s*Merkezi types'tan import\s*$==>
+"@ | Out-File -Encoding UTF8 replacements.txt
