@@ -1,8 +1,10 @@
 ## Proje Hakkında
 
-Verilen vaka çalışması kapsamında Next.js 15 kullanılarak geliştirilmiş Desktop/mobile responsive bir web uygulamasıdır. Figma tasarımlarına maksimum uyumluluğ hedeflenilmiş olup ek olarak geliştirci olarak belirli noktalarında tasarım dokunuşları eklenmiş figma dosyası haricinde rapkology web sitesi içinden örneklemeler alınmıştır.
+Bu proje, modern web teknolojileri kullanarak Türk rap müzik sahnesine odaklanan, kullanıcı dostu ve performanslı bir platform sunmayı hedeflemektedir.
 
-Scss kullanılarak order yonetimi ile sayfa bileşenlerinin responsive yapılarını dektop/mobile uyumlulugunu gozeterek devam ettirilmeye çalışılmıştır.
+Verilen vaka çalışması kapsamında Next.js 15 kullanılarak geliştirilmiş Desktop/mobile responsive bir web uygulamasıdır. Figma tasarımlarına maksimum uyumluluğunu hedeflenilmiş olup ek olarak geliştirci olarak belirli noktalarında tasarım dokunuşları eklenmiş figma dosyası haricinde rapkology web sitesi içinden örneklemeler alınmıştır.
+
+Scss kullanılarak order yönetimi ile sayfa bileşenlerinin responsive yapılarını dektop/mobile uyumluluğunu gözeterek devam ettirilmeye çalışılmıştır.
 
 Swipper ile carousel/slider bileşenleri oluşturulmuş tasarıma uygun bir şekilde hazırlanması amaçlanmıştır.
 
@@ -33,7 +35,6 @@ Swipper ile carousel/slider bileşenleri oluşturulmuş tasarıma uygun bir şek
 
 - **Tag Bazlı Filtreleme** - Kategoriye göre içerik sınıflandırması
 - **Pagination** - Lazy loading ile performans optimizasyonu
-- **Responsive Arama** - Mobil dostu arama deneyimi
 
 ## Veri Yönetimi
 
@@ -62,7 +63,6 @@ interface Article {
 - **Next/Image** kullanımı ile otomatik optimizasyon
 - **Lazy Loading** - Görünür alan dışındaki görseller gecikmeli yüklenir
 - **Responsive Images** - Cihaz boyutuna göre görsel boyutlandırması
-
 
 ### Code Splitting
 
@@ -96,6 +96,7 @@ src/
 ├── types/                 # TypeScript tip tanımları
 └── data/                  # Statik veri dosyaları
 ```
+
 ## Kurulum ve Çalıştırma
 
 ```bash
@@ -111,5 +112,3 @@ npm run dev
 # Production build oluşturun
 npm run build
 ```
-
-Bu proje, modern web teknolojileri kullanarak Türk rap müzik sahnesine odaklanan, kullanıcı dostu ve performanslı bir platform sunmayı hedeflemektedir.
