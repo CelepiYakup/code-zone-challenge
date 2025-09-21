@@ -94,11 +94,8 @@
 
 .searchButton {
   @include flex-center;
-  width: 44px;
-  height: 44px;
-  background: var(--bg-secondary);
-  border: 1px solid var(--border-primary);
-  border-radius: var(--border-radius-md);
+  width: 23px;
+  height: 22px;
   color: var(--text-secondary);
   cursor: pointer;
   transition: var(--transition-normal);

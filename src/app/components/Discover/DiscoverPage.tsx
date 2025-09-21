@@ -94,59 +94,58 @@ export default function DiscoverSection() {
         <main className={styles.discover_list}>
           {loading && <p className={styles.discover_loading}>Yükleniyor...</p>}
 
-          {!loading &&
-            visible.map((a) => (
-              <article key={a._id} className={styles.discover_row}>
-                <figure className={styles.discover_thumb}>
-                  <Link href={`/blog/${a.attributes.slug}`}>
-                    <img
-                      src={a.attributes.img}
-                      alt={a.attributes.title}
-                      loading="lazy"
-                    />
-                  </Link>
-                </figure>
-
-                <div className={styles.discover_meta}>
-                  <div className={styles.discover_author}>
-                    <div className={styles.discover_avatar}>
+          {!loading && (
+            <div className={styles.grid}>
+              {visible.map((a) => (
+                <article key={a._id} className={styles.card}>
+                  <div className={styles.cardHead}>
+                    <div className={styles.author}>
                       <Image
                         src="/a1.svg"
-                        alt="Yazar"
-                        width={24}
-                        height={24}
+                        alt=""
+                        width={22}
+                        height={22}
                         className={styles.avatar}
                       />
+                      <span>{a.attributes.authors?.[0] || "—"}</span>
                     </div>
-                    <span className={styles.discover_author_name}>
-                      {a.attributes.authors?.[0]}
-                    </span>
                   </div>
 
-                  <Link
-                    href={`/blog/${a.attributes.slug}`}
-                    className={styles.titleLink}
-                  >
-                    <h3 className={styles.discover_title}>
-                      {a.attributes.title}
-                    </h3>
-                  </Link>
+                  <div className={styles.thumbCol}>
+                    <Link
+                      href={`/blog/${a.attributes.slug}`}
+                      className={styles.thumbLink}
+                    >
+                      <img
+                        src={a.attributes.img}
+                        alt={a.attributes.title}
+                        loading="lazy"
+                      />
+                    </Link>
+                    <span className={styles.dateBelowDesktop}>
+                      {formatDate(a.createdAt)}
+                    </span>
+                  </div>
+                  <div className={styles.cardBody}>
+                    <span className={styles.dateBelow}>
+                      {formatDate(a.createdAt)}
+                    </span>
 
-                  <Link
-                    href={`/blog/${a.attributes.slug}`}
-                    className={styles.readMoreLink}
-                  >
-                    <div className={styles.discover_more}>Daha Fazla Oku</div>
-                  </Link>
-                </div>
+                    <p className={styles.excerpt}>{a.attributes.desc}</p>
 
-                <div className={styles.discover_row_foot}>
-                  <span className={styles.discover_date}>
-                    {formatDate(a.createdAt)}
-                  </span>
-                </div>
-              </article>
-            ))}
+                    <div className={styles.cardSeparator} />
+
+                    <Link
+                      href={`/blog/${a.attributes.slug}`}
+                      className={styles.readMore}
+                    >
+                      Daha Fazla Oku
+                    </Link>
+                  </div>
+                </article>
+              ))}
+            </div>
+          )}
 
           {!loading && (
             <>

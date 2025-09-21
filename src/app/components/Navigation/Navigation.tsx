@@ -68,7 +68,7 @@ export default function Navigation() {
                 alt="Ara"
                 width={20}
                 height={20}
-                className={styles.searchIcon}
+                className={styles.searchButton}
               />
 
               <a href="/giris" className={styles.premiumButton}>

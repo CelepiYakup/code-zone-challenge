@@ -4,8 +4,8 @@ import styles from "./trends.module.scss";
 
 export interface TrendCardProps {
   index: number;
-  authorAvatar: string | null;
-  authorName: string | null;
+  authorAvatar?: string | null;
+  authorName?: string | null;
   title: string;
   href: string;
 }

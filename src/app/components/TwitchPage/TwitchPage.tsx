@@ -8,8 +8,7 @@ import styles from "./twitchpage.module.scss";
 const TwitchPage: React.FC = () => {
   const data = {
     titleTop: "HER HAFTA",
-    titleHighlight: "CANLI",
-    titleBottom: "DAYIZ!",
+    titleHighlight: "CANLIDAYIZ",
     kicker: "Bizi Takip Edin!",
     leftImage: "/twitch-left.png",
     rightImage: "/twitch-right.png",
@@ -54,7 +53,6 @@ const TwitchPage: React.FC = () => {
               <span className={styles.titleHighlight}>
                 {data.titleHighlight}
               </span>
-              <span className={styles.titleBottom}>{data.titleBottom}</span>
             </h1>
           </div>
           <p className={styles.kicker}>{data.kicker}</p>

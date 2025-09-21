@@ -17,14 +17,16 @@
   gap: 8px;
   margin-bottom: 32px;
   padding-bottom: 16px;
-  border-bottom: 1px solid var(--border-primary);
   font-size: 14px;
+  color: var(--primary-black);
 }
 
 .breadcrumbLink {
-  color: var(--text-secondary);
+  color: var(--primary-black);
   text-decoration: none;
   transition: color 0.2s ease;
+  font-size: 16px;
+  font-weight: 700;
 }
 
 .breadcrumbLink:hover {
@@ -35,7 +37,6 @@
   color: var(--text-muted);
   font-size: 16px;
 }
-
 
 .mainTitle {
   font-size: 48px;
@@ -271,7 +272,7 @@
     grid-template-columns: 1fr;
     gap: 24px;
   }
-  .breadcrumb{
+  .breadcrumb {
     display: none;
   }
 

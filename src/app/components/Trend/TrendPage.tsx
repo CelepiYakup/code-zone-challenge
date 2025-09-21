@@ -20,8 +20,8 @@ const TrendsSection: React.FC = () => {
             Trendler
             <Image
               src="/trend-up.svg"
-              width={26}
-              height={26}
+              width={36}
+              height={36}
               alt="trend up"
               className={styles.titleIcon}
             />

@@ -40,7 +40,6 @@ export default function BlogListPage() {
           <Link href="/blog" className={styles.breadcrumbLink}>
             Blog
           </Link>
-          <span className={styles.breadcrumbSeparator}>›</span>
         </nav>
 
         <h1 className={styles.mainTitle}>BLOG</h1>

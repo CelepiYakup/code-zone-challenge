@@ -103,6 +103,7 @@
 .titleTop {
   display: block;
   opacity: 0.95;
+  rotate: -4deg;
 }
 .titleHighlight {
   display: inline-block;
@@ -111,9 +112,7 @@
   background-clip: text;
   -webkit-text-fill-color: transparent;
   margin: 0 0.35rem;
-}
-.titleBottom {
-  display: inline-block;
+  rotate: -3.7deg;
 }
 
 .kicker {
@@ -195,7 +194,7 @@
   }
 
   .sideArtist {
-    display: block; 
+    display: block;
     max-height: 45%;
     bottom: 80px;
   }
@@ -238,21 +237,23 @@
   }
 
   .kicker {
-    transform: rotate(-2deg);
+    transform: rotate(-4deg);
     font-size: 14px;
     margin-top: 8px;
+    padding-left: 40px;
+    padding-bottom: 40px;
   }
 
   .actions {
     transform: rotate(-2deg);
-    margin-top: 16px;
+    margin-top: 0;
     padding: 10px;
     gap: 8px;
   }
 
   .btnImage {
     width: auto;
-    height: 28px;
+    height: 40px;
   }
 
   .bottomVector {
