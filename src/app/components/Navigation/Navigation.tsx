@@ -65,7 +65,7 @@ export default function Navigation() {
 
             <div className={styles.actions}>
               <Image
-                src="/search.svg"
+                src="/Search.svg"
                 alt="Ara"
                 width={20}
                 height={20}

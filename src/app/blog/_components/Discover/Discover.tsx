@@ -63,7 +63,7 @@ export default function DiscoverSection() {
         </div>
         <div className={styles.actions}>
           <button className={styles.iconbtn}>
-            <Image src="/search.svg" alt="Ara" width={18} height={18} />
+            <Image src="/Search.svg" alt="Ara" width={18} height={18} />
           </button>
           <button className={styles.iconbtn}>
             <Image src="/hamburger.svg" alt="Menü" width={18} height={18} />

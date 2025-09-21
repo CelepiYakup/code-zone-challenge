@@ -131,7 +131,7 @@ export default function MonthlyFavorites() {
             <SwiperSlide key={it.id} className={styles.slide}>
               <Link href={`/blog/${it.slug}`} className={styles.card}>
                 <Image
-                  src="/group.svg"
+                  src="/Group.svg"
                   alt=""
                   fill
                   className={styles.groupBg}
