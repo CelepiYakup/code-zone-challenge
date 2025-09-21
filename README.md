@@ -1,37 +1,115 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## Proje Hakkında
 
-## Getting Started
+Verilen vaka çalışması kapsamında Next.js 15 kullanılarak geliştirilmiş Desktop/mobile responsive bir web uygulamasıdır. Figma tasarımlarına maksimum uyumluluğ hedeflenilmiş olup ek olarak geliştirci olarak belirli noktalarında tasarım dokunuşları eklenmiş figma dosyası haricinde rapkology web sitesi içinden örneklemeler alınmıştır.
 
-First, run the development server:
+Scss kullanılarak order yonetimi ile sayfa bileşenlerinin responsive yapılarını dektop/mobile uyumlulugunu gozeterek devam ettirilmeye çalışılmıştır.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+Swipper ile carousel/slider bileşenleri oluşturulmuş tasarıma uygun bir şekilde hazırlanması amaçlanmıştır.
+
+
+## Teknik Mimari
+
+### Frontend Framework
+
+- **Next.js 15** - App Router kullanımı ile modern React geliştirme
+- **TypeScript** - Tip güvenliği ve geliştirici deneyimi
+- **SCSS Modules** - Bileşen bazlı stillendirme sistemi
+
+## Temel Özellikler
+
+### Ana Sayfa Bileşenleri
+
+1. **Hero Slider** - Öne çıkan içeriklerin otomatik geçişli sunumu
+2. **Twitch Entegrasyonu** - Canlı yayın duyurları ve takip butonları
+3. **Trends Bölümü** - Popüler içeriklerin sıralı gösterimi
+4. **Aylık Favoriler** - Swiper ile kaydırmalı müzik listesi
+5. **Keşfet Bölümü** - Filtrelenebilir içerik galerisi
+
+### Blog-list Sistemi
+
+- **Dinamik Routing** - `/blog/[slug]` yapısı
+
+### Arama ve Filtreleme
+
+- **Tag Bazlı Filtreleme** - Kategoriye göre içerik sınıflandırması
+- **Pagination** - Lazy loading ile performans optimizasyonu
+- **Responsive Arama** - Mobil dostu arama deneyimi
+
+## Veri Yönetimi
+
+### İçerik Yapısı
+
+```typescript
+interface Article {
+  _id: string;
+  attributes: {
+    title: string;
+    desc: string;
+    img: string;
+    authors: string[];
+    category: string[];
+    tags: string[];
+    trends: boolean;
+    slug: string;
+    content?: string;
+  };
+  createdAt: string;
+}
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Image Optimization
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Next/Image** kullanımı ile otomatik optimizasyon
+- **Lazy Loading** - Görünür alan dışındaki görseller gecikmeli yüklenir
+- **Responsive Images** - Cihaz boyutuna göre görsel boyutlandırması
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Learn More
+### Code Splitting
 
-To learn more about Next.js, take a look at the following resources:
+- **Dynamic Imports** - Sayfa bazlı kod bölümlemesi
+- **Component Lazy Loading** - Büyük bileşenlerin gecikmeli yüklenmesi
+- **Bundle Optimization** - Gereksiz kütüphane import'larının minimizasyonu
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Caching
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```typescript
+export async function generateStaticParams() {
+  return data.map((post) => ({
+    slug: post.attributes.slug,
+  }));
+}
+```
 
-## Deploy on Vercel
+## Proje Yapısı
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```
+src/
+├── app/                    # Next.js App Router
+│   ├── components/         # Paylaşılan bileşenler
+│   ├── blog/              # Blog sayfaları
+│   │   ├── [slug]/        # Dinamik blog sayfası
+│   │   └── _components/   # Blog özel bileşenleri
+│   └── layout.tsx         # Ana layout
+├── hooks/                 # Custom React hooks
+├── lib/                   # Utility fonksiyonları
+├── styles/                # Global stiller ve mixins
+├── types/                 # TypeScript tip tanımları
+└── data/                  # Statik veri dosyaları
+```
+## Kurulum ve Çalıştırma
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-# code-zone-challenge
+```bash
+# Projeyi klonlayın
+git clone [repository-url]
+
+# Bağımlılıkları yükleyin
+npm install
+
+# Development server'ı başlatın
+npm run dev
+
+# Production build oluşturun
+npm run build
+```
+
+Bu proje, modern web teknolojileri kullanarak Türk rap müzik sahnesine odaklanan, kullanıcı dostu ve performanslı bir platform sunmayı hedeflemektedir.

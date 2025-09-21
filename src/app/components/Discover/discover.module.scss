@@ -163,7 +163,6 @@
   border: 1px solid var(--border-secondary);
   background: transparent;
   color: var(--text-secondary);
-  border-radius: 6px;
   cursor: pointer;
   transition: 0.15s;
 }
@@ -344,6 +343,12 @@
   align-items: center;
 }
 
+.copy {
+  color: var(--text-muted);
+  font-size: 11px;
+  margin-top: 6px;
+}
+
 @media (min-width: 1025px) {
   .grid {
     grid-template-columns: 1fr;
@@ -415,7 +420,6 @@
     padding-top: 6px;
   }
 }
-
 @media (max-width: 768px) {
   .discover_grid {
     display: block;

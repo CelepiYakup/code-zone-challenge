@@ -216,6 +216,9 @@ export default function DiscoverSection() {
                 height={30}
               />
             </div>
+            <div className={styles.copy}>
+              © RAPKOLOGY All Rights Are Reserved 2025.
+            </div>
           </section>
         </aside>
       </div>
