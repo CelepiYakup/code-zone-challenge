@@ -10,6 +10,33 @@
   padding: 40px 20px;
 }
 
+.breadcrumb {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 32px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border-primary);
+  font-size: 14px;
+}
+
+.breadcrumbLink {
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.breadcrumbLink:hover {
+  color: var(--primary-yellow);
+}
+
+.breadcrumbSeparator {
+  color: var(--text-muted);
+  font-size: 16px;
+}
+
+
 .mainTitle {
   font-size: 48px;
   font-weight: 900;
@@ -243,6 +270,9 @@
   .contentGrid {
     grid-template-columns: 1fr;
     gap: 24px;
+  }
+  .breadcrumb{
+    display: none;
   }
 
   .swiperSection,

@@ -12,9 +12,7 @@ import { useAutoPlay } from "../../hooks/useAutoPlay";
 import { useArticleData } from "../../hooks/useArticleData";
 
 export default function BlogListPage() {
-  const { sideArticles, slides } = useArticleData(
-    data as Article[]
-  );
+  const { sideArticles, slides } = useArticleData(data as Article[]);
 
   const {
     currentSlide,
@@ -34,6 +32,17 @@ export default function BlogListPage() {
   return (
     <div className={styles.blogListContainer}>
       <div className={styles.container}>
+        <nav className={styles.breadcrumb}>
+          <Link href="/" className={styles.breadcrumbLink}>
+            Anasayfa
+          </Link>
+          <span className={styles.breadcrumbSeparator}>›</span>
+          <Link href="/blog" className={styles.breadcrumbLink}>
+            Blog
+          </Link>
+          <span className={styles.breadcrumbSeparator}>›</span>
+        </nav>
+
         <h1 className={styles.mainTitle}>BLOG</h1>
 
         <div className={styles.contentGrid}>
