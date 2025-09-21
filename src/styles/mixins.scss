@@ -1,4 +1,3 @@
-// Responsive breakpoints
 @mixin mobile {
   @media (max-width: 640px) {
     @content;
@@ -23,7 +22,6 @@
   }
 }
 
-
 @mixin flex-center {
   display: flex;
   align-items: center;
@@ -43,7 +41,6 @@
   justify-content: center;
 }
 
-
 @mixin text-truncate {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -57,7 +54,6 @@
   overflow: hidden;
 }
 
-// Button mixins
 @mixin button-base {
   display: inline-flex;
   align-items: center;
@@ -97,8 +93,6 @@
     color: var(--primary-black);
   }
 }
-
-
 @mixin card-base {
   background: var(--bg-card);
   border-radius: var(--border-radius-lg);
@@ -114,13 +108,11 @@
   }
 }
 
-
 @mixin glass-effect {
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
-
 
 @mixin gradient-text {
   background: var(--gradient-primary);
@@ -128,7 +120,6 @@
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-
 
 @mixin container {
   width: 100%;
@@ -144,7 +135,6 @@
     padding: 0 var(--spacing-sm);
   }
 }
-
 
 @mixin custom-scrollbar {
   &::-webkit-scrollbar {

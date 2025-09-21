@@ -22,18 +22,21 @@ const TwitchPage: React.FC = () => {
         style={{ backgroundImage: `url(${data.background})` }}
       />
       <div className={styles.gradientOverlay} />
-
-      <img
+      <Image
         src={data.leftImage}
         alt="Sol sanatçı"
         className={`${styles.sideArtist} ${styles.leftArtist}`}
-        loading="eager"
+        width={400}
+        height={600}
+        priority
       />
-      <img
+      <Image
         src={data.rightImage}
         alt="Sağ sanatçı"
         className={`${styles.sideArtist} ${styles.rightArtist}`}
-        loading="eager"
+        width={300}
+        height={600}
+        priority
       />
 
       <div className={styles.container}>

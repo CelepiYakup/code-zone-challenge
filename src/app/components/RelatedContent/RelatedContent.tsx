@@ -1,6 +1,8 @@
 import Link from "next/link";
+import Image from "next/image";
 import styles from "./RelatedContent.module.scss";
 import { truncateDesc } from "../../../lib/utils";
+
 interface Article {
   _id: string;
   attributes: {
@@ -58,8 +60,6 @@ export default function RelatedContent({
           )
           .slice(0, 3);
 
-
-
   return (
     <section className={styles.relatedContent}>
       <h3 className={styles.title}>DAHA FAZLA İÇERİK</h3>
@@ -72,7 +72,7 @@ export default function RelatedContent({
             className={styles.postItem}
           >
             <div className={styles.postImage}>
-              <img
+              <Image
                 src={post.attributes.img}
                 alt={post.attributes.title}
                 width={78}

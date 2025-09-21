@@ -1,4 +1,4 @@
-import { useMemo, useState, useEffect } from "react";
+import { useMemo, useState, useEffect, useCallback } from "react";
 
 export const usePagination = <T>(items: T[], initialBatchSize: number = 8) => {
   const [visibleCount, setVisibleCount] = useState(initialBatchSize);
@@ -22,12 +22,13 @@ export const usePagination = <T>(items: T[], initialBatchSize: number = 8) => {
       setLoadingMore(false);
     }, 600);
   };
-
-  const resetPagination = () => setVisibleCount(initialBatchSize);
+  const resetPagination = useCallback(() => {
+    setVisibleCount(initialBatchSize);
+  }, [initialBatchSize]);
 
   useEffect(() => {
     resetPagination();
-  }, [items, initialBatchSize]);
+  }, [items, resetPagination]);
 
   return {
     visible,

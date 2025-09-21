@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import styles from "./Navigation.module.scss";
 import Image from "next/image";
+import Link from "next/link";
 
 const NAVIGATION_ITEMS = [
   { label: "Anasayfa", href: "/" },
@@ -21,7 +22,6 @@ const MOBILE_MENU = [
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [pathname, setPathname] = useState("/");
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 10);
@@ -43,21 +43,22 @@ export default function Navigation() {
       >
         <nav className={styles.navigation}>
           <div className={styles.container}>
-            <a href="/" className={styles.logoLink}>
-              <img src="/logo.svg" alt="Logo" width={140} height={36} />
-            </a>
+            <Link href="/" className={styles.logoLink}>
+              <Image
+                src="/logo.svg"
+                alt="Logo"
+                width={140}
+                height={36}
+                priority
+              />
+            </Link>
 
             <ul className={styles.navList}>
               {NAVIGATION_ITEMS.map((item) => (
                 <li key={item.href} className={styles.navItem}>
-                  <a
-                    href={item.href}
-                    className={`${styles.navLink} ${
-                      pathname === item.href ? styles.active : ""
-                    }`}
-                  >
+                  <Link href={item.href} className={styles.navLink}>
                     {item.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -71,9 +72,10 @@ export default function Navigation() {
                 className={styles.searchButton}
               />
 
-              <a href="/giris" className={styles.premiumButton}>
+              <Link href="/giris" className={styles.premiumButton}>
                 <span>GİRİŞ YAP</span>
-              </a>
+              </Link>
+
               <button
                 className={`${styles.mobileToggle} ${
                   isMenuOpen ? styles.active : ""
@@ -84,7 +86,7 @@ export default function Navigation() {
                 aria-expanded={isMenuOpen}
                 aria-controls="mobile-menu"
               >
-                <img
+                <Image
                   src="/mobile-hamburger.svg"
                   alt="Menü"
                   width={28}
@@ -94,6 +96,7 @@ export default function Navigation() {
             </div>
           </div>
         </nav>
+
         <div
           id="mobile-menu"
           className={`${styles.mobileMenu} ${isMenuOpen ? styles.open : ""}`}
@@ -102,27 +105,25 @@ export default function Navigation() {
             <ul className={styles.mobileNavList}>
               {MOBILE_MENU.map((item) => (
                 <li key={item.href} className={styles.mobileNavItem}>
-                  <a
+                  <Link
                     href={item.href}
-                    className={`${styles.mobileNavLink} ${
-                      pathname === item.href ? styles.active : ""
-                    }`}
+                    className={styles.mobileNavLink}
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {item.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
 
             <div className={styles.mobileActions}>
-              <a
+              <Link
                 href="/giris"
                 className={styles.mobilePremiumButton}
                 onClick={() => setIsMenuOpen(false)}
               >
                 <span>Giriş Yap</span>
-              </a>
+              </Link>
             </div>
           </div>
         </div>

@@ -112,9 +112,11 @@ export default function DiscoverSection() {
                   href={`/blog/${a.attributes.slug}`}
                   className={styles.thumbLink}
                 >
-                  <img
+                  <Image
                     src={a.attributes.img}
                     alt={a.attributes.title}
+                    width={300}
+                    height={170}
                     loading="lazy"
                   />
                 </Link>
